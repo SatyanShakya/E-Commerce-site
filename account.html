@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Account</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">   <!----------for home,product...----->
+</head>
+<body>
+	<div class="header">	
+		<div class="main">
+		<div class="container">
+			
+
+			<div class="logo">
+				<img src="image\logo1.png" width="200px"></a>
+				
+			</div>
+			<nav>
+					<ul>
+					<li><a href="main.html">Home</a></li>
+						<li><a href="product.html">Products</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contactus.html">Contact</a></li>
+						<li><a href="account.html">Account</a></li>
+						<img src="image/cart.png" width="30px" height="30px">
+					</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!----------accountpage----------->
+
+
+		<div class="accountpage">
+			<div class="container">
+				<div class="row">
+					<div class="col-2">
+						<img src="image/front1.webp" width="100%">
+					</div>
+					<div class="col-2">
+					   <div class="form-container">
+					   	
+					   	<div class="form-btn">
+					   		<span onclick="login()">Login</span>
+					   		<span onclick="register()">Register</span>
+                             <hr id="Indicator">
+					   </div>
+					   <form id="LoginForm" onsubmit="return validate()">
+					   	  <input type="text" placeholder="Username" id="username">
+					   	  <input type="password" placeholder="Password" id="password">
+					   	  <button type="submit" class="btn">Login</button>
+					   	  <a href="">Forget password</a>
+					   </form>
+					   <form id="RegForm" onsubmit="return validate2()">
+					   	  <input type="text" placeholder="Username" id="username2">
+					   	  <input type="email" placeholder="Email" id="email">
+					   	  <input type="password" placeholder="Password" id="password2">
+					   	  <button type="submit" class="btn">Register</button>
+					   	 
+					   </form>
+					 </div>
+				</div>
+		    </div>	
+		 </div>  
+
+
+
+		 <!------------footer----------->  	 
+
+<div class="footer">
+	<div class="container">
+		
+			
+		
+		<div class="footer-col-1">
+			<h3>Download Our App</h3>
+			<p class="foot">Download App for Android and ios mobile phone.</p>
+			
+		</div>
+		<div class="footer-col-2">
+			<img src="image\logo.png">
+			<p class="foot">Our Purpose is to Satisfy Our customer and deliver Quality Products.</p>
+		</div>
+		<div class="footer-col-3">
+			<h3>Useful Links</h3>
+			<ul>
+				<li>Coupons</li>
+				<li>Blog Post</li>
+				<li>Return Policy</li>
+				<li>Join Affiliate</li>
+			</ul>
+		</div>
+		<div class="footer-col-4">
+			<h3>Follow Us</h3>
+			<ul>
+				<li>Facebook</li>
+				<li>Twitter</li>
+				<li>Instagram</li>
+				<li>Youtube</li>
+			</ul>
+		</div>
+	</div>
+	
+</div>
+<!------is for toggle form----->
+  <script>
+       var LoginForm = document.getElementById("LoginForm");
+       var RegForm = document.getElementById("RegForm");
+       var Indicator = document.getElementById("Indicator");  
+
+          function register(){
+          	RegForm.style.transform ="translateX(0px)";
+          	LoginForm.style.transform ="translateX(0px)";
+          	Indicator.style.transform ="translateX(0px)";
+
+          }
+          function login(){
+          	RegForm.style.transform ="translateX(300px)";
+          	LoginForm.style.transform ="translateX(300px)";
+          	Indicator.style.transform ="translateX(0px)";
+
+
+          }		
+
+          function validate(){
+          	var username= document.getElementById("username").value;
+          	var password= document.getElementById("password").value;
+          	
+
+          	if (username.length<4) {
+          		alert("Please Enter Valid Username")
+          		return false;
+          	}
+          	if (password.length=="") {
+          		alert("Please Enter Your Password")
+          		return false;
+          	}
+       
+          	alert("Sucessfull")
+          	return true;
+          }
+
+          function validate2(){
+          	var username=document.getElementById("username2").value;
+          	var email=document.getElementById("email").value;
+          	var password=document.getElementById("password2").value;
+
+
+
+          	if (username.length<4) {
+          		alert("Please Enter Valid Username")
+          		return false;
+          	}
+          	if (email.indexof("@"== -1) || email.length<6) {
+          		alert("Please Enter Correct Email")
+          		return false;
+          	}
+          	if (password<6) {
+          		alert("Please Enter More Than 6 Characters")
+          		return false;
+          	}
+
+          	alert("Sucessfully Registered!")
+          	return true;
+          }
+
+   </script>
+
+</body>
+</html>
+
